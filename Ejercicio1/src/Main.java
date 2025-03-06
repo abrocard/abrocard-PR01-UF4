@@ -75,7 +75,7 @@ public class Main {
 
         //Bienvenida + instrucciones
         System.out.println("""
-                Bienvenido a Cheese Mouse Game
+                ¡Bienvenido a Cheese Mouse Game!
                 El objetivo del juego es que el raton 'MM' llegue al queso 'CH'
                 Para desplazar el raton pulse:
                 W - Arriba
