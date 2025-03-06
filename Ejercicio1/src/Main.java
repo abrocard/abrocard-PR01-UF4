@@ -78,10 +78,10 @@ public class Main {
                 Bienvenido a Cheese Mouse Game
                 El objetivo del juego es que el raton 'MM' llegue al queso 'CH'
                 Para desplazar el raton pulse:
-                W - arriba
-                A - izquierda
-                S - abajo
-                D - derecha
+                W - Arriba
+                A - Izquierda
+                S - Abajo
+                D - Derecha
                 """);
 
         boolean inGame = true;
