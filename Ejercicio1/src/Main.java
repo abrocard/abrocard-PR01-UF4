@@ -156,19 +156,21 @@ public class Main {
                     break;
             }
 
-            //Mouse en Cheese
+            /// INTERACCIONES DEL RATON CON LAS CASILLAS ///
+
+            //Cheese
             if (matrix[newMouseX][newMouseY] instanceof Cheese) {
                 System.out.println("¡Felicidades! El ratón encontró el queso.");
                 System.out.println("Puntuación final: " + totalPoints);
                 inGame = false;
 
-                //Mouse en Cat
+                //Cat
             } else if  (matrix[newMouseX][newMouseY] instanceof Cat) {
                 System.out.println("¡Oh no! El ratón fue atrapado por el gato. Fin del juego.");
                 System.out.println("Puntuación final: " + totalPoints);
                 inGame = false;
 
-                //Mouse en Positive Question
+                //Positive Question
             } else if (matrix[newMouseX][newMouseY] instanceof PositiveQuestion positiveQ){
                 System.out.println(positiveQ.getQuestion());
                 String answer = scanner.nextLine();
@@ -177,7 +179,7 @@ public class Main {
                     totalPoints += 50;
                 }
 
-                //Mouse en Negative Question
+                //Negative Question
             } else if (matrix[newMouseX][newMouseY] instanceof NegativeQuestion negativeQ) {
                 System.out.println(negativeQ.getQuestion());
                 String answer = scanner.nextLine();
@@ -186,7 +188,7 @@ public class Main {
                     totalPoints -= 20;
                 }
 
-                //Mouse en Puntuation
+                //Puntuation
             } else if (matrix[newMouseX][newMouseY] instanceof Puntuation puntuation) {
                 totalPoints += Integer.parseInt(puntuation.toString());
                 System.out.println("¡Has obtenido " + puntuation + " puntos!");
@@ -194,6 +196,16 @@ public class Main {
 
             //Nueva posicion del mouse
             matrix[newMouseX][newMouseY] = new Mouse();
+
+            //Comprueba si el ratón tiene casillas posibles a las que moverse
+            if ((newMouseX - 1 < 0 || matrix[newMouseX - 1][newMouseY] instanceof VoidCell) &&
+                    (newMouseX + 1 > 3 || matrix[newMouseX + 1][newMouseY] instanceof VoidCell) &&
+                    (newMouseY - 1 < 0 || matrix[newMouseX][newMouseY - 1] instanceof VoidCell) &&
+                    (newMouseY + 1 > 3 || matrix[newMouseX][newMouseY + 1] instanceof VoidCell)) {
+                System.out.println("¡El ratón no tiene movimientos posibles! Fin del juego.");
+                System.out.println("Puntuación final: " + totalPoints);
+                inGame = false;
+            }
         }
     }
 }
