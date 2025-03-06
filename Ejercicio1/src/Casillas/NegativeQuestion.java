@@ -2,8 +2,8 @@ package Casillas;
 
 import java.util.Random;
 
-public class NegativeQ extends GameCell implements Questionable {
-    public NegativeQ() {
+public class NegativeQuestion extends GameCell implements Questionable {
+    public NegativeQuestion() {
         this.content = "--";
     }
 
@@ -29,8 +29,7 @@ public class NegativeQ extends GameCell implements Questionable {
                 System.out.println("¡Respuesta correcta!");
                 return true;
             } else {
-                System.out.println("¡Respuesta incorrecta! El número correcto era " + correctAnswer + ".");
-                //TODO: RESTAR 50 PUNTOS AL JUGADOR
+                System.out.println("¡Respuesta incorrecta! El número correcto era " + correctAnswer + ". Has perdido 20 puntos.");
                 return false;
             }
         } catch (NumberFormatException e) {

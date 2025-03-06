@@ -1,7 +1,7 @@
 package Casillas;
 
-public class PositiveQ extends GameCell implements Questionable {
-    public PositiveQ() {
+public class PositiveQuestion extends GameCell implements Questionable {
+    public PositiveQuestion() {
         this.content = "++";
     }
 
@@ -13,8 +13,7 @@ public class PositiveQ extends GameCell implements Questionable {
     @Override
     public boolean submitAnswer(String answer) {
         if (answer.equalsIgnoreCase("MySQL") || answer.equalsIgnoreCase("PostgreSQL") || answer.equalsIgnoreCase("SQL Server") || answer.equalsIgnoreCase("Oracle")) {
-            System.out.println("¡Respuesta correcta!");
-            //TODO: SUMAR 50 PUNTOS AL JUGADOR
+            System.out.println("¡Respuesta correcta, has obtenido 50 puntos!");
             return true;
         }
         System.out.println("¡Respuesta incorrecta! La respuesta correcta era MySQL, PostgreSQL, SQL Server u Oracle.");

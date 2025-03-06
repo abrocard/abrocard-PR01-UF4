@@ -14,6 +14,4 @@ public class Puntuation extends GameCell {
         int randomValue = possibleValues[random.nextInt(possibleValues.length)];
         return String.valueOf(randomValue);
     }
-
-    //TODO: Sumar el valor de la casilla a la puntuación total del jugador.
 }
